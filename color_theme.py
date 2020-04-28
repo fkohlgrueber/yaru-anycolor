@@ -23,6 +23,17 @@ subprocess.run(["git", "reset", "--hard"], cwd="yaru")
 print("Done.")
 
 # ----------------------------------------------------------------------------
+# project build file
+# ----------------------------------------------------------------------------
+print("Updating theme name...")
+replace_in_file(
+    Path("yaru/meson.build"),
+    "project\('Yaru',", 
+    f"project('{THEME_NAME}',"
+)
+print("Done.")
+
+# ----------------------------------------------------------------------------
 # gtk-3
 # ----------------------------------------------------------------------------
 print("Updating gtk3...")
@@ -97,5 +108,11 @@ replace_in_file(
          id="stop36439" />"""
 )
 
+print("Done.")
+
+# render modified icons
+print("Rendering modified icons...")
+subprocess.run(["python3", "render-bitmaps.py", "folders"], cwd="yaru/icons/src/fullcolor")
+subprocess.run(["python3", "render-bitmaps.py", "user-desktop"], cwd="yaru/icons/src/fullcolor")
 
 print("Done.")
