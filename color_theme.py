@@ -97,6 +97,15 @@ replace_in_file(
     f"$aubergine: {COLOR_MID};"
 )
 
+# replace `Yaru` aliases in gresource schema
+replace_in_file(
+    Path("yaru/gnome-shell/src/data/gnome-shell-theme.gresource.xml"), 
+    "Yaru", 
+    THEME_NAME,
+    num_replacements=4
+)
+
+
 print("Done.")
 
 # ----------------------------------------------------------------------------
