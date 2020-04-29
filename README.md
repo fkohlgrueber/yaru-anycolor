@@ -4,17 +4,17 @@ This repository contains a script that modifies [Ubuntu's Yaru Theme](https://gi
 
 ## Preparations
 
-Clone this repository and initialize the yaru submodule:
-
-```
-git clone <TODO> --recurse-submodules
-cd <TODO>
-```
-
 Install dependencies needed to build yaru (for more details, see yaru's [CONTRIBUTING.md](https://github.com/ubuntu/yaru/blob/master/CONTRIBUTING.md)):
 
 ```
 sudo apt install libgtk-3-dev git meson sassc inkscape optipng ruby
+```
+
+Clone this repository and initialize the yaru submodule:
+
+```
+git clone https://github.com/fkohlgrueber/yaru-anycolor.git --recurse-submodules
+cd yaru-anycolor
 ```
 
 ## Configuration
@@ -24,6 +24,7 @@ Open the `color_theme.py` file and edit the constants at the top to suit your ne
 ```
 THEME_NAME = "YaruBlue"
 COLOR_BRIGHT = "#208fe9"       # orange in yaru
+COLOR_MID = "#3c6b93"          # aubergine in yaru
 COLOR_DARK = "#255074"         # purple in yaru
 BG_COLOR_TERMINAL = "#0e1d30"
 ```

@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 import subprocess
 
-THEME_NAME = "YaruBlueAll"
+THEME_NAME = "YaruBlue"
 COLOR_BRIGHT = "#208fe9"       # orange in yaru
 COLOR_MID = "#3c6b93"          # aubergine in yaru
 COLOR_DARK = "#255074"         # purple in yaru
