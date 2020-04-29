@@ -54,7 +54,7 @@ sudo ninja install
 
 ## Select the theme
 
-The theme can now be selected, either using the gnome tweaks GUI or by using the following commands:
+The theme can now be selected, either using the Gnome Tweaks GUI or by using the following commands:
 
 ```
 gsettings set org.gnome.desktop.interface gtk-theme <YOUR_THEME_NAME>
@@ -69,3 +69,11 @@ sudo update-alternatives --config gdm3-theme.gresource
 ```
 
 When asked which alternative to use, select the modified theme. You can use this command to switch back to the default yaru theme later if desired.
+
+Reboot.
+
+On the login screen, click on the gear icon in the lower right corner, select your theme and log in.
+
+That's it! You should now have the new theme applied to applications, the gnome-shell (dock etc.) and the login screen.
+
+Feel free to open an issue if things don't work as expected.
