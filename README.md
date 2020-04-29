@@ -60,3 +60,12 @@ The theme can now be selected, either using the gnome tweaks GUI or by using the
 gsettings set org.gnome.desktop.interface gtk-theme <YOUR_THEME_NAME>
 gsettings set org.gnome.desktop.interface icon-theme <YOUR_THEME_NAME>
 ```
+
+If you want your login screen to use the modified theme, use the following commands:
+
+```
+sudo update-alternatives --install /usr/share/gnome-shell/gdm3-theme.gresource gdm3-theme.gresource /usr/share/gnome-shell/theme/<YOUR_THEME_NAME>/gnome-shell-theme.gresource 15
+sudo update-alternatives --config gdm3-theme.gresource
+```
+
+When asked which alternative to use, select the modified theme. You can use this command to switch back to the default yaru theme later if desired.
