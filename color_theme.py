@@ -3,18 +3,19 @@ from pathlib import Path
 import re
 import subprocess
 
-THEME_NAME = "YaruBlue"
+THEME_NAME = "YaruBlueAll"
 COLOR_BRIGHT = "#208fe9"       # orange in yaru
+COLOR_MID = "#3c6b93"          # aubergine in yaru
 COLOR_DARK = "#255074"         # purple in yaru
 BG_COLOR_TERMINAL = "#0e1d30"
 
 
-def replace_in_file(path: Path, search, repl):
+def replace_in_file(path: Path, search, repl, num_replacements=1):
     # search is a regex pattern
     content = path.read_text()
-    (content_new, n_repl) = re.subn(search, repl, content, flags=re.MULTILINE|re.S)
-    if n_repl != 1:
-        raise Exception(f"Expected a single replacement, found {n_repl} replacements.")
+    (content_new, n_repl) = re.subn(search, repl, content, flags=re.MULTILINE|re.S|re.I)
+    if n_repl != num_replacements:
+        raise Exception(f"Expected a {num_replacements} replacement(s), found {n_repl} replacement(s).")
     path.write_text(content_new)
 
 # reset submodule
@@ -46,6 +47,20 @@ replace_in_file(
     f"$orange: {COLOR_BRIGHT};"
 )
 
+# replace purple
+replace_in_file(
+    gtk3_folder / "_ubuntu-colors.scss", 
+    "\$purple: #762572;", 
+    f"$purple: {COLOR_DARK};"
+)
+
+# replace aubergine
+replace_in_file(
+    gtk3_folder / "_ubuntu-colors.scss", 
+    "\$aubergine: #924D8B;", 
+    f"$aubergine: {COLOR_MID};"
+)
+
 # replace terminal background color
 replace_in_file(
     gtk3_folder / "_apps.scss",
@@ -66,6 +81,84 @@ replace_in_file(
     Path("yaru/gnome-shell/src/gnome-shell-sass/_ubuntu-colors.scss"), 
     "\$orange: #E95420;", 
     f"$orange: {COLOR_BRIGHT};"
+)
+
+# replace purple
+replace_in_file(
+    Path("yaru/gnome-shell/src/gnome-shell-sass/_ubuntu-colors.scss"), 
+    "\$purple: #762572;", 
+    f"$purple: {COLOR_DARK};"
+)
+
+# replace aubergine
+replace_in_file(
+    Path("yaru/gnome-shell/src/gnome-shell-sass/_ubuntu-colors.scss"), 
+    "\$aubergine: #924D8B;", 
+    f"$aubergine: {COLOR_MID};"
+)
+
+print("Done.")
+
+# ----------------------------------------------------------------------------
+# gnome-shell-icons
+# ----------------------------------------------------------------------------
+gnome_shell_icon_folder = Path("yaru/gnome-shell/src")
+print("Updating gnome-shell-icons...")
+
+# replace aubergine color in checkboxes and toggles
+replace_in_file(
+    gnome_shell_icon_folder / "checkbox-dark.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=2
+)
+replace_in_file(
+    gnome_shell_icon_folder / "checkbox-focused-dark.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=1
+)
+replace_in_file(
+    gnome_shell_icon_folder / "checkbox-focused.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=1
+)
+replace_in_file(
+    gnome_shell_icon_folder / "checkbox-off-focused-dark.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=1
+)
+replace_in_file(
+    gnome_shell_icon_folder / "checkbox-off-focused.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=1
+)
+replace_in_file(
+    gnome_shell_icon_folder / "checkbox.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=2
+)
+replace_in_file(
+    gnome_shell_icon_folder / "toggle-on-hc.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=2
+)
+replace_in_file(
+    gnome_shell_icon_folder / "toggle-on-intl.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=1
+)
+replace_in_file(
+    gnome_shell_icon_folder / "toggle-on.svg",
+    "#924d8b", 
+    COLOR_MID,
+    num_replacements=4
 )
 
 print("Done.")
