@@ -2,6 +2,8 @@
 
 This repository contains a script that modifies [Ubuntu's Yaru Theme](https://github.com/ubuntu/yaru) to use colors of your choice. The idea for this project came from using the [Yaru-Colors](https://github.com/Jannomag/Yaru-Colors) project.
 
+Tested on Ubuntu 20.04 (Gnome 3.36.1).
+
 ## Preparations
 
 Install dependencies needed to build yaru (for more details, see yaru's [CONTRIBUTING.md](https://github.com/ubuntu/yaru/blob/master/CONTRIBUTING.md)):
@@ -45,7 +47,7 @@ Build the theme just like the original yaru theme is built (for more details, se
 
 ```
 cd yaru
-meson build
+meson build -D gnome-shell-gresource=true
 cd build
 sudo ninja install
 ```
