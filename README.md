@@ -4,6 +4,14 @@ This repository contains a script that modifies [Ubuntu's Yaru Theme](https://gi
 
 Tested on Ubuntu 20.04 (Gnome 3.36.1).
 
+## Example
+
+The following screenshots show the YaruBlue-Theme I'm currently using:
+
+![YaruBlue-Theme](docs/YaruBlue-Theme.png)
+
+![YaruBlue-Widget-Factory](docs/YaruBlue-Widget-Factory.png)
+
 ## Preparations
 
 Install dependencies needed to build yaru (for more details, see yaru's [CONTRIBUTING.md](https://github.com/ubuntu/yaru/blob/master/CONTRIBUTING.md)):
