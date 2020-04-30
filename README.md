@@ -12,6 +12,8 @@ The following screenshots show the YaruBlue-Theme I'm currently using:
 
 ![YaruBlue-Widget-Factory](docs/YaruBlue-Widget-Factory.png)
 
+![YaruBlue-Login](docs/YaruBlue-Login.png)
+
 ## Preparations
 
 Install dependencies needed to build yaru (for more details, see yaru's [CONTRIBUTING.md](https://github.com/ubuntu/yaru/blob/master/CONTRIBUTING.md)):
