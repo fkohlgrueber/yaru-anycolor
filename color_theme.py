@@ -210,11 +210,21 @@ replace_in_file(
          id="stop36439" />"""
 )
 
+# replace colors for emblem-symbolic-link icon
+replace_in_file(
+    icon_folder / "emblems/emblem-symbolic-link.svg",
+    "#7d2b51",
+    COLOR_DARK,
+    num_replacements=6
+)
+
+
 print("Done.")
 
 # render modified icons
 print("Rendering modified icons...")
 subprocess.run(["python3", "render-bitmaps.py", "folders"], cwd="yaru/icons/src/fullcolor")
 subprocess.run(["python3", "render-bitmaps.py", "user-desktop"], cwd="yaru/icons/src/fullcolor")
+subprocess.run(["python3", "render-bitmaps.py", "emblem-symbolic-link"], cwd="yaru/icons/src/fullcolor")
 
 print("Done.")
