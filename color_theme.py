@@ -169,6 +169,12 @@ replace_in_file(
     COLOR_MID,
     num_replacements=4
 )
+replace_in_file(
+    gnome_shell_icon_folder / "toggle-on-dark.svg",
+    "#7c436f", 
+    COLOR_MID,
+    num_replacements=2
+)
 
 print("Done.")
 
