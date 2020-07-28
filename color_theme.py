@@ -35,6 +35,47 @@ replace_in_file(
 print("Done.")
 
 # ----------------------------------------------------------------------------
+# gtk-2
+# ----------------------------------------------------------------------------
+print("Updating gtk2-dark...")
+gtk2_folder = Path("yaru/gtk/src/dark/gtk-2.0")
+
+# replace orange
+replace_in_file(
+    gtk2_folder / "gtkrc",
+    "#E95420", 
+    COLOR_BRIGHT,
+    num_replacements=1
+)
+print("Done.")
+
+print("Updating gtk2-default...")
+gtk2_folder = Path("yaru/gtk/src/default/gtk-2.0")
+
+# replace orange
+replace_in_file(
+    gtk2_folder / "gtkrc",
+    "#E95420", 
+    COLOR_BRIGHT,
+    num_replacements=1
+)
+print("Done.")
+
+print("Updating gtk2-light...")
+gtk2_folder = Path("yaru/gtk/src/light/gtk-2.0")
+
+# replace orange
+replace_in_file(
+    gtk2_folder / "gtkrc",
+    "#E95420", 
+    COLOR_BRIGHT,
+    num_replacements=1
+)
+print("Done.")
+
+
+
+# ----------------------------------------------------------------------------
 # gtk-3
 # ----------------------------------------------------------------------------
 print("Updating gtk3...")
